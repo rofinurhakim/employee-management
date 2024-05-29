@@ -1,0 +1,19 @@
+<!-- add-employee.component.html -->
+<div class="container mt-4">
+    <h2>Add Employee</h2>
+    <form (ngSubmit)="onAddEmployee()">
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="newEmployee.email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group mt-2">
+            <input type="text" class="form-control" [(ngModel)]="newEmployee.first_name" name="firstName" placeholder="First Name" required>
+        </div>
+        <div class="form-group mt-2">
+            <input type="text" class="form-control" [(ngModel)]="newEmployee.last_name" name="lastName" placeholder="Last Name" required>
+        </div>
+        <div class="form-group mt-2">
+            <input type="text" class="form-control" [(ngModel)]="newEmployee.avatar" name="avatar" placeholder="Avatar URL" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Add Employee</button>
+    </form>
+</div>
