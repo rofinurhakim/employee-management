@@ -11,31 +11,41 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   loginForm!: FormGroup;
+  response:any;
+  isSubmit:boolean;
 
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder, 
+    private loginService: LoginService, 
+    private router: Router) {
+      this.response = null;
+      this.isSubmit = false;
+    }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['eve.holt@reqres.in', [Validators.required, Validators.email]],
-      password: ['cityslicka', Validators.required],
-      remember_me: ['']
+      username: ['', [Validators.required]],
+      password: ['', Validators.required],
     });
   }
 
   submitLoginForm() {
     if (this.loginForm.valid) {
-      this.loginService.login(this.loginForm.getRawValue()).subscribe({
-        next: (response) => {
-          console.log(response)
-          this.router.navigate(['/employee'])
-        },
-        error: (error) => {
-          console.log(error)
-        }
-      })
+      this.isSubmit = true;
+      console.log(this.loginForm)
+     this.response =  this.loginService.login(this.loginForm.getRawValue());
+     if(this.response){
+      localStorage.setItem('user', JSON.stringify(this.response));
+      this.router.navigate(['/employee']);
+     }
     } else {
       alert("Form is invalid");
     }
+  }
+
+  logout() {
+    this.loginService.logout();
+    this.router.navigate(['/login']);
   }
 
 }

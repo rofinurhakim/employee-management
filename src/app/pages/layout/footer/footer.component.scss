@@ -1,0 +1,28 @@
+.footer-container {
+    height: 40px;
+    padding-top: 10px;
+    margin-top: 36px;
+    background: linear-gradient(to right, #4567b7, #6495ed);
+}
+  
+  .footer-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content {
+    margin: 0 auto;
+}
+
+.text-white {
+    color: white;
+}

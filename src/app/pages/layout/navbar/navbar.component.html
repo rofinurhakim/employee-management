@@ -1,0 +1,12 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-gradient-blue p-3">
+    <a class="navbar-brand text-white fw-bold fs-4" href="#">Employee Management</a>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+      <div class="align-self-center">
+        <p class="mb-0 me-3 text-white">{{ employeeInfo ? employeeInfo.username : '' }}</p>
+      </div>
+      <div class="border-start ps-3">
+        <img (click)="logout()" class="img-fluid cursor-pointer" width="20" src="../../../../assets/icon/logout.png" alt="">
+      </div>
+    </div>
+  </nav>

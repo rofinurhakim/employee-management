@@ -1,0 +1,58 @@
+<div class="container h-layout mt-4">
+    <div class="card-header bg-warning p-3 h2">
+        <div>
+            <h2>Detail Data</h2>
+        </div>
+            
+    </div>
+    <form *ngIf="employee">
+        <div class="d-flex justify-content-end mb-2">
+            <span *ngIf="employee.status === 'active'" class="badge text-bg-success fs-6">{{ employee.status || '' }}</span>
+            <span *ngIf="employee.status === 'inactive'" class="badge text-bg-secondary fs-6">{{ employee.status || '' }}</span>
+        </div>  
+        <table class="table table-bordered rounded m-auto">
+            <tbody>
+                <tr>
+                    <td class="p-2 td-bg">Username</td>
+                    <td class="p-2">{{ employee.username || '' }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 td-bg">First Name</td>
+                    <td class="p-2">{{ employee.firstName || '' }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 td-bg">Last Name</td>
+                    <td class="p-2">{{ employee.lastName || '' }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 td-bg">Email</td>
+                    <td class="p-2">{{ employee.lastName || '' }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 td-bg">Birth Date</td>
+                    <td class="p-2">{{ employee.email || '' }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 td-bg">Basic Salary</td>
+                    <td class="p-2">{{ employee.basicSalary || '' }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 td-bg">Group</td>
+                    <td class="p-2">{{ employee.group || '' }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 td-bg">Description</td>
+                    <td class="p-2" style="max-width: 10px;">{{ employee.description || '' }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!employee">
+            <div class="alert alert-warning" role="alert">
+            Data Not Found!
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button (click)="goBack()" type="button" class="btn btn-success">Close</button>
+        </div>
+    </form>
+</div>

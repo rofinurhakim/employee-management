@@ -1,0 +1,135 @@
+{
+    "employees": [
+      {
+        "id": 1,
+        "username": "username1",
+        "password": "Test1234",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "birthDate": "1990-01-01",
+        "basicSalary": 50000.0,
+        "status": "active",
+        "group": "cow",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 2,
+        "username": "username2",
+        "password": "Test1234",
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "email": "jane.smith@example.com",
+        "birthDate": "1995-05-15",
+        "basicSalary": 60000.0,
+        "status": "active",
+        "group": "goat",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 3,
+        "username": "username3",
+        "password": "Test1234",
+        "firstName": "Michael",
+        "lastName": "Johnson",
+        "email": "michael.johnson@example.com",
+        "birthDate": "1988-09-30",
+        "basicSalary": 70000.0,
+        "status": "inactive",
+        "group": "cat",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 4,
+        "username": "username4",
+        "password": "Test1234",
+        "firstName": "Emily",
+        "lastName": "Brown",
+        "email": "emily.brown@example.com",
+        "birthDate": "1987-04-20",
+        "basicSalary": 55000.0,
+        "status": "active",
+        "group": "rabbit",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 5,
+        "username": "username5",
+        "password": "Test1234",
+        "firstName": "Daniel",
+        "lastName": "Martinez",
+        "email": "daniel.martinez@example.com",
+        "birthDate": "1993-12-10",
+        "basicSalary": 65000.0,
+        "status": "inactive",
+        "group": "snake",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 6,
+        "username": "username6",
+        "password": "Test1234",
+        "firstName": "Olivia",
+        "lastName": "Garcia",
+        "email": "olivia.garcia@example.com",
+        "birthDate": "1991-07-25",
+        "basicSalary": 75000.0,
+        "status": "active",
+        "group": "tiger",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 7,
+        "username": "username7",
+        "password": "Test1234",
+        "firstName": "William",
+        "lastName": "Rodriguez",
+        "email": "william.rodriguez@example.com",
+        "birthDate": "1989-03-05",
+        "basicSalary": 60000.0,
+        "status": "active",
+        "group": "lion",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 8,
+        "username": "username8",
+        "password": "Test1234",
+        "firstName": "Sophia",
+        "lastName": "Lopez",
+        "email": "sophia.lopez@example.com",
+        "birthDate": "1996-08-18",
+        "basicSalary": 70000.0,
+        "status": "inactive",
+        "group": "bird",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 9,
+        "username": "username9",
+        "password": "Test1234",
+        "firstName": "James",
+        "lastName": "Hernandez",
+        "email": "james.hernandez@example.com",
+        "birthDate": "1992-02-14",
+        "basicSalary": 55000.0,
+        "status": "active",
+        "group": "butterfly",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      },
+      {
+        "id": 10,
+        "username": "username10",
+        "password": "Test1234",
+        "firstName": "Emma",
+        "lastName": "Gonzalez",
+        "email": "emma.gonzalez@example.com",
+        "birthDate": "1986-10-30",
+        "basicSalary": 65000.0,
+        "status": "inactive",
+        "group": "worm",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam lorem eu nulla lobortis, sed gravida velit hendrerit."
+      }
+    ]
+  }
+  

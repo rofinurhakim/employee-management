@@ -1,6 +1,6 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import * as employee from '../../../employee.json';
 
 @Injectable({
   providedIn: 'root'
@@ -9,17 +9,21 @@ export class EmployeeService {
 
 
   constructor(private http: HttpClient) {}
-
-  getUsers(page: number, perPage: number, searchText: string): Observable<any> {
-    let params = new HttpParams()
-      .set('page', page.toString())
-      .set('per_page', perPage.toString());
-
-    if (searchText) {
-      params = params.set('q', searchText);
-    }
-
-    return this.http.get<any>('https://reqres.in/api/users', { params });
+ 
+  getAllEmployee(): any {
+    return employee.employees;
   }
-
+  getDetailEmployee(id: number): any {
+    return employee.employees.find(x => x.id === id);
+  }
+  deleteEmployee(id: number): any {
+    return employee.employees.filter(x => x.id !== id);
+  }
+  getUserInfo() {
+    return localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null;
+  }
+  addUser(payload: { id: number; username: string; password: string; firstName: string; lastName: string; email: string; birthDate: string; basicSalary: number; status: string; group: string; description: string; }): any {
+    return employee.employees.push(payload);
+  }
+  
 }

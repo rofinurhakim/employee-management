@@ -1,34 +1,119 @@
-<!-- employee-list.component.html -->
-
-<div class="container mt-4">
-
-    <div class="container">
-        <h2>Employee List</h2>
-        <div class="row mt-3">
-            <div class="col-md-6">
-                <input type="text" class="form-control" [(ngModel)]="searchText" (input)="onSearch()"
-                    placeholder="Search by name">
+<div class="container h-layout mt-4">
+    <div class="container-fluid py-4 py-md-4 px-3">
+        <div class="d-flex align-items-center">
+            <h2 class="fw-bold mb-0 border-bottom border-4">Dashboard</h2>
+        </div>
+    </div>
+    <div class="border">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between p-3">
+                    <div>
+                        <input type="text" class="form-control" [(ngModel)]="searchText" (input)="onSearch()"
+                            placeholder="Search by name" />
+                    </div>
+                    <div>
+                        <button (click)="addEmployee()" class="btn btn-primary">Add Employee</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <table class="table mt-3">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Email</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Avatar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of users">
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.first_name }}</td>
-                    <td>{{ user.last_name }}</td>
-                    <td><img [src]="user.avatar" alt="Avatar"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="d-flex">
+                                <div (click)="sortTable('firstName')" class="align-self-center me-1 cursor-pointer">
+                                    Full Name
+                                </div>
+                                <div>
+                                    <div class="icon-sort"
+                                        [class.active]="sortBy === 'firstName' && sortOrder === 'asc'">
+                                        <img class="img-fluid" width="15" src="../../../../assets/icon/sort.png"
+                                            alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </th>
+                        <th>Email</th>
+                        <th>Basic Salary</th>
+                        <th>Status</th>
+                        <th>Group</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of paginatedEmployees">
+                        <td>{{ user.firstName }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.basicSalary }}</td>
+                        <td class="text-capitalize">
+                            <span *ngIf="user.status == 'active'" class="badge text-bg-success">{{ user.status }}</span>
+                            <span *ngIf="user.status == 'inactive'" class="badge text-bg-secondary">{{ user.status
+                                }}</span>
+                        </td>
+                        <td>{{ user.group }}</td>
+                        <td>
+                            <button (click)="editEmployee(user.id)" class="btn btn-sm border border-success shadow-sm rounded me-2">
+                                <img class="img-fluid" width="20" src="../../../../assets/icon/pencil.png" alt="" />
+                            </button>
+                            <button (click)="deleteEmployee(user.id)"
+                                class="btn btn-sm border border-danger shadow-sm rounded me-2">
+                                <img class="img-fluid" width="20" src="../../../../assets/icon/trash-can.png" alt="" />
+                            </button>
+                            <button (click)="detailEmployee(user.id)" class="btn btn-sm boder border-primary shadow-sm rounded">
+                                <img class="img-fluid" width="20" src="../../../../assets/icon/eye.png" alt="" />
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex flex-column flex-md-row justify-content-between p-3">
+                    <div class="list-info mb-3 mb-md-0">
+                        <div class="d-flex">
+                            <div class="me-2 mb-2 mb-sm-0">
+                                <select class="form-select" (change)="setLimit($event)">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="75">75</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="mt-2 pt-lg-2 mt-sm-0">
+                                {{ paginationInfo }}
+                            </div>
+                        </div>
+                    </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item" [class.disabled]="currentPage === 1">
+                                <a class="page-link" (click)="setPage(currentPage - 1)" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+        
+                            <li *ngFor="let page of [].constructor(totalPages); let i = index" class="page-item"
+                                [class.active]="currentPage === i + 1">
+                                <a class="page-link" (click)="setPage(i + 1)">{{ i + 1 }}</a>
+                            </li>
+        
+                            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                                <a class="page-link" (click)="setPage(currentPage + 1)" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>

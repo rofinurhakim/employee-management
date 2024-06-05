@@ -1,0 +1,10 @@
+.bg-gradient-blue {
+    background-image: linear-gradient(to right, #4567b7, #6495ed);
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    transition: background-position 0.5s ease-out;
+  }
+  
+  .bg-gradient-blue:hover {
+    background-position: 100% 100%;
+  }
